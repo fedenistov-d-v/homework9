@@ -44,8 +44,9 @@ public class Main {
         char temp;
         for (int i = 0; i < reverseFullName.length / 2; i++) {
             temp = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
-            reverseFullName[reverseFullName.length - 1 - i] = temp;
+            final int twoIndex = reverseFullName.length - 1 - i;
+            reverseFullName[i] = reverseFullName[twoIndex];
+            reverseFullName[twoIndex] = temp;
         }
         for (char item : reverseFullName) {
             System.out.print(item);
