@@ -20,12 +20,8 @@ public class Main {
         int minExpenses = expenses[0];
         int maxExpenses = expenses[0];
         for (int i = 1; i < expenses.length; i++) {
-            if (expenses[i] < minExpenses) {
-                minExpenses = expenses[i];
-            }
-            if (expenses[i] > maxExpenses) {
-                maxExpenses = expenses[i];
-            }
+            if (expenses[i] < minExpenses) minExpenses = expenses[i];
+            if (expenses[i] > maxExpenses) maxExpenses = expenses[i];
         }
         System.out.printf("Минимальная сумма трат за неделю составила %d рублей. Максимальная " +
                 "сумма трат за неделю составила %d, рублей%n", minExpenses, maxExpenses);
@@ -44,16 +40,15 @@ public class Main {
 
         // Task 4
         System.out.println(" _____ Задача 4 _____");
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        /*
-        String strFullName = "";
-        for (int i = reverseFullName.length - 1; i > -1; i--){
-            strFullName = strFullName + reverseFullName[i];
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char temp;
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
         }
-        System.out.println(strFullName);
-        */
-        for (int i = reverseFullName.length - 1; i > -1; i--) {
-            System.out.print(reverseFullName[i]);
+        for (char item : reverseFullName) {
+            System.out.print(item);
         }
     }
 
